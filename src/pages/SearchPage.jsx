@@ -90,9 +90,9 @@ const SearchPage = () => {
   
 
   return (
-    <div className="w-full relative [background:linear-gradient(179.41deg,_#18181b,_#3e065f)] overflow-hidden flex flex-col items-start justify-start text-left text-base text-ripe-plum-50 font-lg-normal">
+    <div className="w-full  relative [background:linear-gradient(179.41deg,_#18181b,_#3e065f)] overflow-hidden flex flex-col items-start justify-start text-left text-base text-ripe-plum-50 font-lg-normal">
       <Header />
-      {showFilter && 
+      { (showFilter || window.innerWidth>500) && 
       <div className="w-full bg-gray-300 overflow-hidden flex flex-row items-center justify-start flex-wrap content-center py-[18px] px-8 box-border gap-2 text-center text-sm">
       <div className="rounded-components-button-global-borderradiuslg border-gray-300 border-[1px] border-solid overflow-hidden flex flex-row items-start justify-start text-left text-base text-components-button-component-defaultcolor">
         <div className="overflow-hidden flex flex-col items-start justify-start text-ripe-plum-50">
@@ -240,11 +240,11 @@ const SearchPage = () => {
       
       <div className="self-stretch flex flex-row items-start justify-start">
         {
-          showFilter &&
+          (showFilter || window.innerWidth>500) && 
        
         <div className="self-stretch  bg-gray-300 overflow-hidden  flex flex-col items-start justify-start p-8 box-border gap-8">
 
-          <div onClick={()=>{setShowFilter(false)}} className="flex justify-start items-center cursor-pointer gap-2"> <FaArrowLeft/>Back to Search</div>
+       {!showFilter || window.innerWidth>500 &&   <div onClick={()=>{setShowFilter(false)}} className="flex justify-start items-center cursor-pointer gap-2"> <FaArrowLeft/>Back to Search</div>}  
           <div className=" flex flex-col  w-[60%] gap-2">
             <div className="relative leading-[24px] font-semibold">Address</div>
             <div className="self-stretch flex flex-col items-start justify-start">
@@ -519,7 +519,7 @@ const SearchPage = () => {
           </button>
         </div>  }
         {/* Main Content */} {
-         ( !showFilter  || window.innerWidth>400 ) &&  <div style={{background: "linear-gradient(to bottom, rgba(24, 24, 27, 2) 70%, rgba(62, 6, 95, 1) 100%)"
+         ( !showFilter  || window.innerWidth>500 ) &&  <div style={{background: "linear-gradient(to bottom, rgba(24, 24, 27, 2) 70%, rgba(62, 6, 95, 1) 100%)"
           }} className="  md:flex flex-1 flex-row  items-end justify-center flex-wrap content-end p-8 text-5xl text-components-button-component-primarycolor">
                     <div className="flex-1 flex flex-col items-start justify-start gap-8">
                       <div className="self-stretch flex flex-row items-end justify-between flex-wrap content-end">
@@ -531,13 +531,16 @@ const SearchPage = () => {
                             245 results found
                           </div>
                         </div>
+                        { (  window.innerWidth <500) &&
                         <button onClick={ ()=>setShowFilter(true)} className="cursor-pointer [border:none] w-full py-0 px-components-button-component-paddinginlinelg bg-ripe-plum-950 self-stretch shadow-[0px_2px_0px_rgba(5,_145,_255,_0.1)] rounded-components-button-global-borderradiuslg h-10 mt-4 flex flex-col items-center justify-center box-border">
-            <div className=" flex flex-row items-center justify-center gap-components-button-global-marginxs">
+           
+            
+             <div className=" flex flex-row items-center justify-center gap-components-button-global-marginxs">
               <div className="relative text-base font-lg-normal text-components-button-component-primarycolor text-left">
                  Filters
               </div>
             </div>
-          </button>                      </div>
+          </button>  }                    </div>
                       <div className="self-stretch mx-auto flex flex-row items-start justify-start flex-wrap content-start gap-8 text-center text-xs text-bunker-50">
                         <div className="flex flex-wrap gap-4">
                           {guards.map((item)=>{
