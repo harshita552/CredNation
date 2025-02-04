@@ -2,6 +2,11 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { FaDollarSign } from "react-icons/fa6";
+import { FaClock } from "react-icons/fa";
+import { RiGraduationCapFill } from "react-icons/ri";
+
+
 
 const RegisterAsAGuard1 = () => {
   const navigate = useNavigate();
@@ -51,10 +56,13 @@ const RegisterAsAGuard1 = () => {
             onSubmit={handleSubmit}
             className="self-stretch flex flex-col items-start justify-start gap-12 text-base"
           >
-            <div className="self-stretch relative leading-[38px] font-semibold whitespace-pre-wrap">
+            <div className="flex flex-col gap-3">
+            <div className="self-stretch relative text-[30px] font-semibold whitespace-pre-wrap">
               Guard Registration
             </div>
             <img className="w-[100px] relative h-1" alt="" src="/vector2.svg" />
+            </div>
+         
 
             {["full name", "phone number", "email", "password"].map(
               (field, index) => (
@@ -117,11 +125,7 @@ const RegisterAsAGuard1 = () => {
             <div className="self-stretch flex flex-col items-start justify-start gap-6 text-base">
               <div className="self-stretch flex flex-row items-center justify-start gap-4">
                 <div className="rounded-21xl bg-ripe-plum-50 flex flex-row items-center justify-start p-3">
-                  <img
-                    className="w-6 relative h-6"
-                    alt=""
-                    src="/clip-path-group2.svg"
-                  />
+                <RiGraduationCapFill className="text-[#3E065F] text-[26px]"/>
                 </div>
                 <div className="flex-1 flex flex-col items-start justify-start gap-1">
                   <div className="self-stretch relative leading-[24px] font-semibold">
@@ -134,11 +138,12 @@ const RegisterAsAGuard1 = () => {
               </div>
               <div className="self-stretch flex flex-row items-center justify-start gap-4">
                 <div className="rounded-21xl bg-ripe-plum-50 flex flex-row items-center justify-start p-3">
-                  <img
+                  <FaDollarSign className="text-[#3E065F] text-[26px]"/>
+                  {/* <img
                     className="w-6 relative h-6"
                     alt=""
                     src="/clip-path-group3.svg"
-                  />
+                  /> */}
                 </div>
                 <div className="flex-1 flex flex-col items-start justify-start gap-1">
                   <div className="self-stretch relative leading-[24px] font-semibold">
@@ -151,11 +156,7 @@ const RegisterAsAGuard1 = () => {
               </div>
               <div className="self-stretch flex flex-row items-center justify-start gap-4">
                 <div className="rounded-21xl bg-ripe-plum-50 flex flex-row items-center justify-start p-3">
-                  <img
-                    className="w-6 relative h-6"
-                    alt=""
-                    src="/clip-path-group4.svg"
-                  />
+                <FaClock className="text-[#3E065F] text-[26px]"/>
                 </div>
                 <div className="flex-1 flex flex-col items-start justify-start gap-1">
                   <div className="self-stretch relative leading-[24px] font-semibold">

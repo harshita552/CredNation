@@ -44,7 +44,7 @@ const Header = ({
 
   return (
     <header
-      className={`self-stretch bg-gray-200 overflow-hidden flex flex-col md:flex-row items-center justify-between flex-wrap content-center p-4 md:p-8 top-[0] z-[99] sticky gap-5 cursor-pointer text-left text-base text-ripe-plum-50 font-lg-normal ${className}`}
+      className={`self-stretch bg-gray-200 flex justify-between overflow-hidden  md:flex-row items-center  flex-wrap content-center p-4 md:p-8 top-[0] z-[99] sticky gap-5 cursor-pointer text-left text-base text-ripe-plum-50 font-lg-normal ${className}`}
       
     >
       {/* Logo Section */}
@@ -138,8 +138,15 @@ const Header = ({
             </div>
           </div>
         </div>
+        </div>
+
 
         {/* Login and Get Started Section */}
+        <div
+        className={`${
+          isMenuOpen ? "flex" : "hidden"
+        } md:flex flex-col md:flex-row w-full md:w-auto items-center justify-center md:justify-between gap-4 md:gap-0`}
+      >
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
           <div
             className="cursor-pointer w-[68px] flex items-center justify-center py-2"

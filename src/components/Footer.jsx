@@ -4,7 +4,7 @@ import FrameComponent1 from "../components/FrameComponent1";
 
 const Footer = () => {
     return (
-      <div className="w-full relative [background:linear-gradient(179.48deg,_#0e0e10,_#3e065f)] overflow-hidden flex flex-col items-start justify-start min-w-[360px] leading-[normal] tracking-[normal]">
+      <div className="w-full relative [background:linear-gradient(179.48deg,_#0e0e10,_#3e065f)] overflow-hidden flex flex-col items-start justify-start  leading-[normal] tracking-[normal]">
       <footer className="self-stretch bg-bunker-950 overflow-hidden flex flex-col md:flex-row items-center justify-between flex-wrap content-center p-8 gap-5 text-left text-base text-ripe-plum-50 font-lg-normal">
         <div className="relative leading-[24px] text-center md:text-left">
           © 2024 Crednation. All rights reserved.
